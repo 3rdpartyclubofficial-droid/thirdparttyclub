@@ -1,0 +1,242 @@
+:root {
+  --brand-color: #ff6a00;
+  --text-color: #222;
+  --bg-color: #faf7f3;
+  --border-color: #eee;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", system-ui, sans-serif;
+  background: #ffffff;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* 공통 이미지 */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* HERO 영역 */
+header.hero {
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+
+.hero img {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+}
+
+.hero-title-wrap {
+  position: absolute;
+  left: 16px;
+  bottom: 20px;
+  right: 16px;
+}
+
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.hero-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+/* 메인 컨텐츠 */
+main {
+  padding: 16px;
+}
+
+section + section {
+  margin-top: 24px;
+}
+
+h2.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.section-body {
+  font-size: 14px;
+  color: #333;
+}
+
+.section-body p + p {
+  margin-top: 8px;
+}
+
+/* 리스트 */
+ul {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+ul li + li {
+  margin-top: 4px;
+}
+
+/* 가격 박스 */
+.price-box {
+  border-radius: 8px;
+  background: var(--bg-color);
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.price-main {
+  font-weight: 700;
+  color: #000;
+}
+
+.price-discount {
+  color: var(--brand-color);
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+.price-regular {
+  font-size: 13px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* 하이라이트 박스 */
+.highlight-box {
+  background: var(--bg-color);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.highlight-box strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* 호스트 영역 */
+.host {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.host-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ddd;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.host-info {
+  font-size: 14px;
+}
+
+.host-info strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* 프로그램 리스트 */
+.program-list li {
+  margin-top: 4px;
+}
+
+/* 공지사항 박스 */
+.notice-box {
+  background: #fff9f3;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+}
+
+.notice-box strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-divider {
+  margin: 20px 0 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 작은 글씨 */
+.small {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* CTA 버튼 */
+.cta-wrap {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid var(--border-color);
+  padding: 12px 16px;
+  margin-top: 24px;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--brand-color);
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  opacity: 0.95;
+}
+
+/* 반응형 */
+@media (min-width: 768px) {
+  header.hero {
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .cta-wrap {
+    border-radius: 12px 12px 0 0;
+  }
+}
