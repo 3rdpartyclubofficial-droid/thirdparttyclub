@@ -83,6 +83,7 @@ h2.section-title {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
+   color: #ff6a00;
 }
 
 .section-body {
@@ -104,12 +105,49 @@ ul li + li {
   margin-top: 4px;
 }
 
+/*모집인원 실시간*/
+.status-bar {
+  background: #fff7f0;
+  border: 1px solid #ffead6;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 16px 16px 8px;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status-label {
+  font-weight: 700;
+  color: #ff6a00;
+}
+
+.status-count {
+  color: #333;
+}
+
+.status-state {
+  margin-left: auto;
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #ff6a00;
+  color: #ff6a00;
+}
+
+.status-state.close {
+  border-color: #999;
+  color: #666;
+}
+
 /* 가격 박스 */
 .price-box {
   border-radius: 8px;
   background: var(--bg-color);
   padding: 12px 14px;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .price-main {
@@ -127,6 +165,30 @@ ul li + li {
   font-size: 13px;
   color: #777;
   margin-top: 2px;
+}
+
+.price-benefit {
+  font-size: 13px;
+  color: #777;        /* 약간 연한 회색 */
+  margin-top: 6px;    /* 살짝 띄워서 레이어 구분 */
+  line-height: 1.4;
+}
+
+/*유튜브 비디오 삽입*/
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%; /* 9:16 vertical ratio */
+  margin: 24px 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px; /* 모서리 둥글게 하고 싶으면 유지 */
 }
 
 /* 하이라이트 박스 */
