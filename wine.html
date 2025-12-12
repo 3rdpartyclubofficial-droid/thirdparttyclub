@@ -5,6 +5,9 @@
   <title>Third Party Club – 와인 모임</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=gxhiizwzqn"></script>
+
 </head>
 <body>
 <div class="page">
@@ -16,10 +19,10 @@
     <div class="hero-title-wrap">
       <div class="hero-tag">THIRD PARTY CLUB</div>
       <div class="hero-title">
-      크리스마스 프라이빗 와인 다이닝 모임
+      [3040] 크리스마스 프라이빗 와인 다이닝 모임
       </div>
       <div class="hero-subtitle">
-        2025년 12월 25일(목) 17:00 · 경기도 양주 유양동
+        2025년 12월 25일(목) 17:00 · 경기도 양주 나이스피크닉
       </div>
     </div>
   </header>
@@ -100,6 +103,14 @@
   </div>
 </section>
 
+<!-- 디테일 이미지 섹션 -->
+<section class="detail-image-section">
+  <div class="detail-image-wrapper">
+    <img src="img/wine/wine_detail_page.jpg" alt="와인 모임 상세 소개 이미지" />
+  </div>
+</section>
+
+
     <!-- 이런 분께 추천 -->
     <section>
       <h2 class="section-title">이런 분께 추천드려요</h2>
@@ -119,7 +130,7 @@
       <div class="host">
         <div class="host-avatar">
           <!-- 필요하면 프로필 사진: img/common/host-wine.jpg -->
-          <!-- <img src="img/common/host-wine.jpg" alt="호스트 프로필" /> -->
+          <img src="img/common/host_img.jpg" alt="호스트 프로필" /> 
         </div>
         <div class="host-info">
           <strong>Third Party Club Host</strong>
@@ -139,10 +150,10 @@
       <h2 class="section-title">프로그램</h2>
       <div class="section-body">
         <ul class="program-list">
-          <li>19:00 – 웰컴 글라스 & 간단한 인사</li>
-          <li>19:20 – 와인 3종 소개 및 테이스팅</li>
-          <li>20:00 – 자유 대화 & 네트워킹</li>
-          <li>21:00 – 라스트 글라스 & 마무리 대화</li>
+          <li>17:00 – 웰컴 글라스 & 인사 / 아이스브레이킹</li>
+          <li>17:30 – 식사와 함께 와인 테이스팅(3종)</li>
+          <li>18:40 – 자유 대화 & 네트워킹</li>
+          <li>19:20 – (날씨 좋으면) 야외 불멍 & 라스트 글라스</li>
         </ul>
         <p class="small">* 진행 시간과 구성은 현장 상황에 따라 조금 조정될 수 있습니다.</p>
       </div>
@@ -152,15 +163,46 @@
     <section>
       <h2 class="section-title">위치</h2>
       <div class="section-body">
-        <p><strong>나이스피크닉 (경기도 양주시 유양동 …)</strong></p>
+        <p><strong>나이스피크닉 (경기도 양주시 유양동 원골로 104-21)</strong></p>
         <p class="small">
           지도에서는 ‘나이스피크닉’으로 검색해주세요.  
           입구 간판도 ‘나이스피크닉’으로 되어 있으며, 당일에는 서파클 와인모임 전용으로 운영됩니다.
         </p>
-        <div style="margin-top:10px;">
-          <!-- 공통 위치 사진: img/common/location.jpg -->
-          <img src="img/common/location.jpg" alt="나이스피크닉 전경" />
-        </div>
+         <div id="map" style="width:100%;height:400px;"></div>
+    <script>
+      var mapOptions = {center: new naver.maps.LatLng(37.781656, 127.024580),
+                        zoom: 15,
+                        minZoom: 10,
+                        zoomControl: true, //줌 컨트롤의 표시 여부
+zoomControlOptions: { //줌 컨트롤의 옵션
+            position: naver.maps.Position.TOP_RIGHT
+},
+ scrollWheel: false
+};
+      var map = new naver.maps.Map('map', mapOptions);
+      var marker = new naver.maps.Marker({  position: new naver.maps.LatLng(37.781656, 127.024580), map: map});
+  
+    </script>
+        <!--<div style="margin-top:10px;">
+          <img src="img/common/location.png" alt="나이스피크닉 전경" />
+        </div>-->
+      </div>
+    </section>
+
+    <!-- 오시는 길 -->
+    <section>
+      <h2 class="section-title">오시는 길</h2>
+      <div class="section-body">
+        <p class="small">
+          대중교통, 자가용, 주차 안내 등 자세한 길 안내는 아래 링크에서 확인하실 수 있습니다.
+        </p>
+        <a
+          href="https://your-notion-link-here" 
+          target="_blank" 
+          class="cta-link"
+        >
+          오시는 길 자세히 보기 ⇀
+        </a>
       </div>
     </section>
 
@@ -181,6 +223,7 @@
         <ul>
           <li>행사 시작 15분 전부터 입장이 가능합니다.</li>
           <li>본 모임은 다이닝 구성으로 진행되며, 따뜻한 식사가 함께 제공됩니다.</li>
+          <li>본 모임은 3시간 진행되며, </li>
           <li>본 모임은 성인(만 19세 이상)만 참여 가능합니다.</li>
         </ul>
 
@@ -189,7 +232,7 @@
         <strong>환불 안내</strong>
         <ul>
           <li>모임 전날까지 최소 인원(4인)이 모이지 않을 경우, 모임은 취소되며 참가비 전액이 환불됩니다.</li>
-          <li>행사 5일 전까지 100% 환불 가능합니다. 그 후로는 환불이 불가합니다.</li>
+          <li>모임 5일 전까지 100% 환불 가능합니다. 그 후로는 환불이 불가합니다.</li>
         </ul>
       </div>
     </section>
