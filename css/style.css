@@ -294,6 +294,11 @@ ul li + li {
   margin-top: 4px;
 }
 
+.naver-color {
+  color: #03C75A;
+  font-weight: 500;
+}
+
 /* CTA 버튼 */
 .cta-wrap {
   position: sticky;
@@ -320,6 +325,8 @@ ul li + li {
 .cta-button:hover {
   opacity: 0.95;
 }
+
+
 
 /* 반응형 */
 @media (min-width: 768px) {
