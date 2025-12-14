@@ -93,7 +93,7 @@
       </div>
     </section>
 
-  <section class="video-section">
+  <section class="video-section" onclick="trackWineEvent('video_section_click', 'youtube_intro')">
   <div class="video-wrapper">
     <iframe 
       src="https://www.youtube.com/embed/zrJ_vehe-R8"
@@ -210,6 +210,7 @@ zoomControlOptions: { //줌 컨트롤의 옵션
           href="https://chipped-bobcat-75b.notion.site/2c61374ca00a800d8b18d82a8d13a1f0" 
           target="_blank" 
           class="cta-link"
+          onclick="trackWineEvent('location_click', 'notion_guide')"
         >
           오시는 길 자세히 보기 ⇀
         </a>
@@ -258,22 +259,17 @@ zoomControlOptions: { //줌 컨트롤의 옵션
   </li>
 </ul>
 <a
-  href="https://www.instagram.com/thirdpartyclub/" target="_blank" class="cta-link">
+  href="https://www.instagram.com/thirdpartyclub/" target="_blank" class="cta-link" onclick="trackWineEvent('instagram_click', 'wine_page')">
   인스타그램에서 일정 확인하기 ⇀
 </a>
       </div>
     </section>
 
-    <!-- 중간 CTA -->
-    <!--<section>
-      <a class="cta-button" href="https://forms.gle/your-wine-form" target="_blank">
-        와인 모임 신청하기
-      </a>
-    </section> -->
+  
 
     <!-- 하단 고정 CTA -->
     <div class="cta-wrap">
-      <a class="cta-button" href="https://booking.naver.com/booking/12/bizes/1403564/items/6728954?startDateTime=2025-12-25T00%3A00%3A00%2B09%3A00" target="_blank" onclick="trackApplyClick()">
+      <a class="cta-button" href="https://booking.naver.com/booking/12/bizes/1403564/items/6728954?startDateTime=2025-12-25T00%3A00%3A00%2B09%3A00" target="_blank" onclick="trackWineEvent('apply_click', 'naver_booking')">
         와인 모임 신청하기
       </a>
       <div class="small">
