@@ -1,0 +1,299 @@
+:root {
+  --brand-color: #275cac;
+  --brand-bg: #eef4ff;
+  --text-color: #222;
+  --bg-color: #faf7f3;
+  --border-color: #eee;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", system-ui, sans-serif;
+  background: #f4f6f8; /* 바디 배경을 회색조로 변경하여 카드 효과 강조 */
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* [수정 1] 페이지 너비 480px로 통일 */
+.page { 
+  max-width: 480px; 
+  margin: 0 auto; 
+  background: #fff; 
+  position: relative; 
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+
+/* 1. HERO 영역 */
+header.hero {
+  background: #000; color: #fff; position: relative;
+}
+.hero img { opacity: 0.7; width: 100%; height: auto; display: block; }
+
+/* [수정 2] 뒤로가기 버튼 스타일 (Hero 위에 뜸) */
+.back-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9); /* 반투명 흰색 배경 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.back-btn:active { transform: scale(0.95); }
+
+.hero-title-wrap {
+  position: absolute; left: 20px; bottom: 24px; right: 20px;
+}
+.hero-tag {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 8px; opacity: 0.8; font-weight: 600;
+  background: var(--brand-color); display: inline-block; padding: 2px 6px; border-radius: 4px; color: #fff;
+}
+.hero-title {
+  font-size: 22px; /* 480px 폭에 맞춰 폰트 사이즈 미세 조정 */
+  font-weight: 700; line-height: 1.35; margin-bottom: 6px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.hero-subtitle {
+  font-size: 13px; opacity: 0.9; font-weight: 400;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* 메인 컨텐츠 공통 */
+main { padding: 20px; }
+section + section { margin-top: 32px; }
+
+h2.section-title {
+  font-size: 17px; font-weight: 700; margin-bottom: 12px;
+  color: var(--brand-color);
+}
+.section-body { font-size: 15px; color: #333; word-break: keep-all; }
+.section-body p + p { margin-top: 10px; }
+
+/* 2. 모집현황 (Status Bar) */
+.status-bar {
+  background: var(--brand-bg);
+  border: 1px solid #dcebff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 16px 20px 0 20px;
+  font-size: 0.85rem; /* 폰트 살짝 조정 */
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+}
+.status-label { font-weight: 700; color: var(--brand-color); }
+.status-count { color: #333; }
+.status-state {
+  margin-left: auto; font-size: 0.75rem; padding: 2px 8px;
+  border-radius: 999px; background: var(--brand-color); color: #fff; font-weight: 600;
+}
+
+/* 3. 가격 박스 */
+/* 3. 가격 및 정보 박스 (트레바리 스타일 v2) */
+.price-box-v2 {
+  background: #fff; /* 배경 흰색 */
+  padding: 0;      /* 내부 패딩 제거 (섹션 자체 여백 활용) */
+  /* 필요하다면 테두리를 줄 수 있지만, 스크린샷은 깔끔한 텍스트 위주입니다. */
+  border-bottom: 1px solid #eee; 
+  padding-bottom: 30px; /* 하단 여백 확보 */
+}
+
+/* 상단 가격 영역 */
+.price-header {
+  margin-bottom: 20px;
+}
+
+.total-price {
+  font-size: 26px; /* 스크린샷처럼 크게 */
+  font-weight: 800; /* 두껍게 */
+  color: #275cac; /* 스크린샷의 오렌지 컬러 적용 (브랜드 컬러 #275cac로 변경 가능) */
+  /* color: var(--brand-color);  ← 파란색을 원하시면 이 주석을 푸세요 */
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.monthly-price {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.monthly-price .divider {
+  color: #ddd;
+  margin: 0 6px;
+  font-size: 12px;
+  vertical-align: 1px;
+}
+
+/* 구분선 */
+.price-line {
+  height: 1px;
+  background: #eee;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* 하단 상세 정보 (장소/일정) */
+.info-row {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.info-row.align-top {
+  align-items: flex-start; /* 일정처럼 내용이 길 때 상단 정렬 */
+}
+
+.info-label {
+  width: 40px; /* 라벨 너비 고정 (장소, 일정 정렬 맞춤) */
+  font-weight: 700;
+  color: #888; /* 연한 회색 */
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.info-value {
+  color: #111;
+  font-weight: 700;
+}
+
+.info-value-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-value-group .time {
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.info-value-group .dates {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* 4. 하이라이트 박스 & 리스트 */
+.highlight-box {
+  background: var(--bg-color); border-radius: 8px; padding: 16px; font-size: 14px;
+}
+.highlight-box strong { display: block; margin-bottom: 8px; font-size: 15px; color: #111; }
+ul { padding-left: 20px; font-size: 14px; color: #444; }
+ul li { margin-bottom: 6px; line-height: 1.5; }
+
+/* 5. 커리큘럼 */
+.month-scroll-container {
+  overflow-x: auto; margin-bottom: 16px; scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.month-scroll-container::-webkit-scrollbar { display: none; }
+.month-track { display: flex; gap: 8px; }
+.month-btn {
+  flex: 0 0 auto; width: 60px; height: 60px;
+  border-radius: 12px; background: #f4f6f8; border: 1px solid #eee;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s; color: #888;
+}
+.month-btn .year { font-size: 10px; margin-bottom: 2px; }
+.month-btn .mon { font-size: 14px; font-weight: 700; }
+.month-btn.active {
+  background: var(--brand-color); color: #fff; border-color: var(--brand-color);
+  box-shadow: 0 4px 10px rgba(39, 92, 172, 0.3); transform: translateY(-2px);
+}
+
+.book-display-area {
+  position: relative; overflow: hidden; background: #f8f9fa;
+  border-radius: 12px; padding: 30px 0; text-align: center; border: 1px solid #eee;
+}
+.book-content { position: relative; z-index: 2; padding: 0 20px; }
+.curriculum-month { font-size: 13px; color: var(--brand-color); font-weight: 700; margin-bottom: 12px; }
+.book-cover-wrapper {
+  width: 110px; /* 480px 화면 대응 */
+  aspect-ratio: 1 / 1.5; margin: 0 auto 16px auto;
+  border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden; background: #ddd;
+}
+.book-cover-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+#bookTitle { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 4px; }
+#bookAuthor { font-size: 13px; color: #666; }
+
+.nav-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #fff; border: 1px solid #eee; font-size: 18px; color: #333;
+  cursor: pointer; z-index: 5; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.nav-arrow.prev { left: 10px; }
+.nav-arrow.next { right: 10px; }
+
+/* 6. 호스트 & 프로그램 */
+.host { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.host-avatar {
+  width: 52px; height: 52px; border-radius: 50%; background: #eee; overflow: hidden; flex-shrink: 0;
+  border: 1px solid #f0f0f0;
+}
+.host-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.host-info { font-size: 14px; }
+.host-info strong { display: block; margin-bottom: 2px; font-size: 15px; color: #111; }
+.host-info span { font-size: 13px; color: #666; }
+
+.program-list li { margin-bottom: 16px; }
+.program-list strong { font-size: 15px; color: #222; display: block; margin-bottom: 4px; }
+
+/* 7. 공지사항 & 기타 */
+.notice-box {
+  background: #fff9f3; border-radius: 8px; padding: 16px; font-size: 13px;
+}
+.section-divider { margin: 16px 0; border-top: 1px solid #eee; }
+.cta-link {
+  display: block; width: max-content; margin: 16px auto 0;
+  padding: 10px 18px; border-radius: 999px; border: 1px solid var(--brand-color);
+  font-size: 13px; text-decoration: none; color: var(--brand-color); background: #fff; font-weight: 600;
+  transition: all 0.2s;
+}
+.cta-link:hover { background: var(--brand-color); color: #fff; }
+
+.small { font-size: 12px; color: #888; margin-top: 6px; }
+.brand-color-text { color: var(--brand-color); font-weight: 700; }
+
+/* 8. 하단 고정 CTA */
+.cta-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 480px; /* [수정 3] 고정 CTA도 480px에 맞춤 */
+  
+  background: #fff;
+  border-top: 1px solid var(--border-color);
+  padding: 16px 20px 30px 20px;
+  z-index: 9999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+}
+.cta-button {
+  display: block; width: 100%; text-align: center;
+  background: var(--brand-color); color: #fff; border-radius: 12px;
+  padding: 16px 0; font-size: 16px; font-weight: 700; text-decoration: none;
+  box-shadow: 0 4px 12px rgba(39, 92, 172, 0.25);
+}
+.cta-button:active { transform: scale(0.98); }
+
+/* PC에서 중앙 정렬 느낌 살리기 */
+@media (min-width: 768px) {
+  .page { 
+    margin: 40px auto; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
+  }
+}

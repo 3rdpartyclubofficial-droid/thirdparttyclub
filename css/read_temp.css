@@ -1,0 +1,302 @@
+/* --- 기존 read.css 내용 --- */
+
+/* 1. 상단 네비게이션 */
+.top-nav {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.back-btn {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    margin-right: 8px; text-decoration: none; cursor: pointer;
+}
+.page-title {
+    flex: 1;              /* 남은 공간을 모두 차지함 */
+    text-align: center;   /* 그 공간 안에서 가운데 정렬 */
+    
+    /* 뒤로가기 버튼 크기만큼 오른쪽 여백을 줘서 시각적 보정 (야매 방식) */
+    padding-right: 48px;  
+    
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #111;
+}
+
+/* 2. 히어로 섹션 */
+.hero-section {
+    position: relative; width: 100%; aspect-ratio: 16 / 12; overflow: hidden;
+}
+.hero-img { width: 100%; height: 100%; position: relative; }
+.hero-img img { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 70%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+.hero-text {
+    position: absolute; bottom: 24px; left: 24px; right: 24px;
+    color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-text .tag {
+    display: inline-block; background: #275cac; color: #fff;
+    font-size: 0.75rem; padding: 4px 8px; border-radius: 4px;
+    margin-bottom: 10px; font-weight: 600;
+}
+.hero-text h1 {
+    font-size: 1.6rem; font-weight: 800; line-height: 1.35;
+    margin-bottom: 8px; word-break: keep-all;
+}
+.hero-text p { font-size: 0.95rem; opacity: 0.9; font-weight: 400; }
+
+/* 3. 정보 요약 (UI 리뉴얼) */
+.info-summary {
+    background: #fff;
+    padding: 32px 24px; /* 양옆 마진 확보 */
+    display: block; /* grid 제거 */
+}
+
+/* 상단 가격 강조 영역 */
+.summary-top {
+    margin-bottom: 20px;
+}
+.price-highlight {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 800;
+    color: #275cac; /* 브랜드 포인트 컬러 유지 */
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+.price-sub {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+}
+.divider-bar {
+    color: #ddd;
+    margin: 0 6px;
+    font-size: 0.8rem;
+    vertical-align: text-top;
+}
+
+/* 구분선 */
+.summary-line {
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    margin-bottom: 24px;
+}
+
+/* 하단 상세 리스트 */
+.summary-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.summary-details li {
+    display: flex;
+    align-items: flex-start; /* 텍스트가 길어져도 상단 정렬 */
+    margin-bottom: 20px;
+}
+.summary-details li:last-child {
+    margin-bottom: 0;
+}
+
+/* 항목 이름 (장소, 일정) */
+.summary-details .label {
+    display: inline-block;
+    width: 48px; /* 고정 너비로 정렬 맞춤 */
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 700;
+    margin-top: 2px; /* 텍스트 높이 보정 */
+    flex-shrink: 0;
+}
+
+/* 상세 내용 */
+.summary-details .desc {
+    flex: 1;
+}
+.summary-details .desc strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #111;
+    font-weight: 600;
+    margin-bottom: 4px;
+    background: none; /* 기존 형광펜 효과 제거 */
+    padding: 0;
+}
+.summary-details .desc .sub-desc {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* 4. 텍스트/공통 섹션 */
+.text-section { padding: 40px 24px; }
+.text-section h2 { font-size: 1.3rem; font-weight: 700; color: #111; margin-bottom: 20px; }
+.text-section p { font-size: 1rem; color: #444; line-height: 1.65; word-break: keep-all; }
+.text-section strong { color: #275cac; background: rgba(39, 92, 172, 0.1); padding: 0 4px; }
+
+/* 5. 커리큘럼 */
+.curriculum-section { padding: 40px 0; background: #fff; }
+.curriculum-section h2 { padding: 0 24px; font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; }
+
+.month-scroll-container {
+    padding: 0 24px; overflow-x: auto; margin-bottom: 24px; scrollbar-width: none;
+}
+.month-scroll-container::-webkit-scrollbar { display: none; }
+.month-track { display: flex; gap: 8px; }
+
+.month-btn {
+    flex: 0 0 auto; width: 64px; height: 64px;
+    border-radius: 14px; background: #f4f6f8; border: none;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s; color: #999;
+}
+.month-btn .year { font-size: 0.7rem; margin-bottom: 2px; }
+.month-btn .mon { font-size: 1rem; font-weight: 700; }
+.month-btn.active {
+    background: #111; color: #fff; transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.book-display-area {
+    margin: 0 24px; padding: 40px 0; border-radius: 20px;
+    position: relative; overflow: hidden; background: #f4f6f8;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.book-bg-blur {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: #e9ecef; z-index: 0;
+}
+.book-content { position: relative; z-index: 10; width: 100%; padding: 0 20px; }
+.curriculum-month { font-size: 0.9rem; color: #666; margin-bottom: 16px; font-weight: 600; }
+.book-cover-wrapper {
+    width: 150px; aspect-ratio: 1 / 1.5; margin: 0 auto 20px auto;
+    border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden; background: #ddd;
+}
+.book-cover-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+#bookTitle { font-size: 1.2rem; font-weight: 700; color: #111; margin-bottom: 6px; }
+#bookAuthor { font-size: 0.9rem; color: #666; }
+
+.nav-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.9); border: 1px solid #eee;
+    font-size: 1.5rem; color: #333; cursor: pointer; z-index: 20;
+    display: flex; align-items: center; justify-content: center;
+}
+.nav-arrow.prev { left: 12px; }
+.nav-arrow.next { right: 12px; }
+
+/* 6. 호스트 섹션 */
+.host-section { padding: 40px 24px; background: #fff; }
+.host-section h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; }
+
+.host-profile {
+    display: flex; align-items: center;
+    background: #f8f9fa; padding: 20px; border-radius: 16px;
+    margin-bottom: 20px;
+}
+.host-face {
+    width: 70px !important; height: 70px !important;
+    border-radius: 50%; margin-right: 16px; object-fit: cover;
+    border: 1px solid #eee; flex-shrink: 0;
+}
+.host-info { flex: 1; }
+.host-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; color: #111; }
+.host-info .job {
+    font-size: 0.75rem; color: #275cac; background: #eef4ff;
+    padding: 2px 6px; border-radius: 4px; margin-left: 4px;
+    font-weight: 600; vertical-align: middle;
+}
+.host-info p { font-size: 0.85rem; color: #666; line-height: 1.4; word-break: keep-all; }
+
+/* 호스트 추가 설명 (새로 추가됨) */
+.host-desc p {
+    font-size: 0.95rem; color: #444; line-height: 1.6; margin-bottom: 12px;
+}
+.small-link { font-size: 0.85rem; color: #888; font-family: monospace; }
+
+
+/* --- [NEW] 새로 추가된 스타일들 --- */
+
+/* 7. 프로그램 리스트 (진행순서) */
+.program-list {
+    list-style: none; padding: 0; border-left: 2px solid #eee; margin-left: 8px;
+}
+.program-list li {
+    position: relative; padding-left: 24px; margin-bottom: 30px;
+}
+.program-list li:last-child { margin-bottom: 0; }
+.program-list li::before {
+    content: ''; position: absolute; left: -6px; top: 0;
+    width: 10px; height: 10px; border-radius: 50%; background: #275cac;
+    border: 2px solid #fff; box-shadow: 0 0 0 1px #eee;
+}
+.program-list .time {
+    display: block; font-size: 0.8rem; color: #275cac; font-weight: 700; margin-bottom: 4px;
+}
+.program-list strong {
+    display: block; font-size: 1.05rem; color: #111; margin-bottom: 6px; background: none; padding: 0;
+}
+.program-list p { font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; }
+
+
+/* 8. 지도 및 오시는 길 */
+.map-container {
+    width: 100%; height: 240px; border-radius: 12px;
+    overflow: hidden; background: #eee; margin-bottom: 16px;
+    border: 1px solid #eee;
+}
+.direction-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; padding: 14px 0;
+    border: 1px solid #275cac; border-radius: 12px;
+    background: #fff; color: #275cac; font-weight: 700;
+    text-decoration: none; font-size: 0.95rem;
+    transition: all 0.2s;
+}
+.direction-btn:hover { background: #f0f5ff; }
+
+/* 9. 공지사항 박스 */
+.notice-box {
+    background: #f8f9fa; border-radius: 16px; padding: 20px;
+}
+.notice-box strong {
+    display: block; font-size: 0.95rem; color: #111; margin-bottom: 10px;
+    background: none; padding: 0;
+}
+.notice-box ul { padding-left: 20px; list-style-type: disc; margin: 0; }
+.notice-box li {
+    font-size: 0.9rem; color: #666; margin-bottom: 6px; line-height: 1.5;
+}
+.notice-divider {
+    height: 1px; background: #e0e0e0; margin: 20px 0;
+}
+
+
+/* 10. 하단 CTA (Sticky) */
+.bottom-cta-container {
+    position: fixed; bottom: 0; left: 0; right: 0; margin: 0 auto;
+    max-width: 480px; padding: 16px 24px 34px 24px;
+    background: linear-gradient(to top, #fff 90%, rgba(255,255,255,0));
+    z-index: 1000;
+}
+.cta-btn {
+    display: block; width: 100%; padding: 18px 0;
+    background: #275cac; color: #fff; text-align: center;
+    text-decoration: none; font-size: 1.1rem; font-weight: 700;
+    border-radius: 16px; box-shadow: 0 8px 20px rgba(39, 92, 172, 0.3);
+    transition: transform 0.2s;
+}
+.cta-btn:active { transform: scale(0.98); }

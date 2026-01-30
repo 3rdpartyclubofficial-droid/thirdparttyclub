@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>함께성장 | 서드파티클럽 독서모임</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/read.css">
+
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=gxhiizwzqn"></script>
+</head>
+
+<body>
+
+<div class="main-container">
+  
+  <header class="top-nav">
+    <a href="index.html" class="back-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </a>
+    <span class="page-title">모임 상세</span>
+  </header>
+
+  <main class="content-area">
+    
+    <section class="hero-section">
+      <div class="hero-img">
+        <img src="img/read/thumb_read.png" alt="함께성장 독서모임">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-text">
+        <span class="tag">커리어 · 인사이트</span>
+        <h1>혼자 일하는 우리,<br>든든한 동료가 될까요?</h1>
+        <p>나만의 속도로 일하는 사람들의<br>느슨하지만 단단한 성장 클럽</p>
+      </div>
+    </section>
+
+<section class="info-summary">
+      <div class="summary-top">
+        <h2 class="price-highlight">1회 30,000원</h2>
+        <p class="price-sub">음료 1잔 포함 <span class="divider-bar">|</span> 최대 6명 소수 정예</p>
+      </div>
+
+      <div class="summary-line"></div>
+
+      <ul class="summary-details">
+        <li>
+          <span class="label">장소</span>
+          <div class="desc">
+            <strong>양주 서드파티클럽</strong>
+            <p class="sub-desc">경기 양주시 유양동 원골로 104-21</p>
+          </div>
+        </li>
+        <li>
+          <span class="label">일정</span>
+          <div class="desc">
+            <strong>매월 셋째 주 목요일 19:30</strong>
+            <p class="sub-desc">2/20(목), 3/20(목), 4/17(목) ~</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="text-section">
+      <h2>왜 '함께성장' 인가요?</h2>
+      <p>
+        혼자 일하다 보면 방향을 잃거나 지칠 때가 있습니다.
+        우리는 서로의 페이스메이커가 되어줍니다.<br><br>
+        책 속에 갇힌 지식이 아니라,
+        내 일과 삶에 적용할 수 있는 <strong>'살아있는 인사이트'</strong>를 나눕니다.
+      </p>
+    </section>
+
+    <section class="curriculum-section">
+      <h2>우리가 함께 읽을 기록</h2>
+      <div class="month-scroll-container">
+        <div class="month-track" id="monthTrack"></div>
+      </div>
+      <div class="book-display-area">
+        <div class="book-bg-blur" id="bookBg"></div>
+        <div class="book-content">
+          <p class="curriculum-month" id="displayMonth">2026년 2월의 주제</p>
+          <div class="book-cover-wrapper">
+            <img src="" alt="책 표지" id="bookCover" onerror="this.src='img/common/logo.png'">
+          </div>
+          <h3 id="bookTitle">책 제목</h3>
+          <p id="bookAuthor">저자 · 출판사</p>
+        </div>
+        <button class="nav-arrow prev" onclick="changeMonth(-1)">‹</button>
+        <button class="nav-arrow next" onclick="changeMonth(1)">›</button>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="host-section">
+      <h2>모임장 소개</h2>
+      <div class="host-profile">
+        <img src="img/common/logo.png" alt="박현호" class="host-face">
+        <div class="host-info">
+          <h3>박현호 <span class="job">1인 기업가</span></h3>
+          <p>시골에서 브랜드와 공간을 만듭니다.<br>어제보다 조금 더 나은 내일을 고민합니다.</p>
+        </div>
+      </div>
+      <div class="host-desc">
+        <p>
+          나이스피크닉에서 다양한 모임과 공간 대여를 운영하며,
+          트레바리 독서모임 파트너로 7년간 활동한 경험을 바탕으로
+          누구나 편하게 말할 수 있는 따뜻한 분위기를 만듭니다.
+        </p>
+        <p class="small-link">Instagram @parkhyunhoho</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="text-section">
+      <h2>진행 순서 (2시간)</h2>
+      <ul class="program-list">
+        <li>
+          <span class="time">19:30 ~ 19:50</span>
+          <strong>아이스브레이킹</strong>
+          <p>간단한 자기소개 및 근황 토크로 어색함을 풉니다.</p>
+        </li>
+        <li>
+          <span class="time">19:50 ~ 21:10</span>
+          <strong>북 토크 (Deep Dive)</strong>
+          <p>발제문을 중심으로 책에 대한 감상과 인사이트를 깊이 있게 나눕니다.</p>
+        </li>
+        <li>
+          <span class="time">21:10 ~ 21:30</span>
+          <strong>마무리 및 회고</strong>
+          <p>오늘의 대화를 정리하고 다음 모임을 기약합니다.</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="text-section">
+      <h2>오시는 길</h2>
+      <p style="margin-bottom:12px;">
+        <strong>서드파티클럽 (나이스피크닉)</strong><br>
+        경기도 양주시 유양동 원골로 104-21
+      </p>
+      
+      <div id="map" class="map-container"></div>
+      
+      <a href="https://chipped-bobcat-75b.notion.site/2c61374ca00a800d8b18d82a8d13a1f0" target="_blank" class="direction-btn">
+        상세 경로 안내 (주차/교통) ⇀
+      </a>
+    </section>
+
+    <section class="text-section">
+      <h2>안내 사항</h2>
+      <div class="notice-box">
+        <strong>✅ 모집 및 참여 안내</strong>
+        <ul>
+          <li>최소 인원 4인 미달 시 모임이 취소될 수 있습니다. (전액 환불)</li>
+          <li>모두의 깊이 있는 대화를 위해 책은 꼭 완독하고 와주세요.</li>
+        </ul>
+
+        <div class="notice-divider"></div>
+
+        <strong>💰 환불 규정</strong>
+        <ul>
+          <li>모임 5일 전: 100% 환불</li>
+          <li>모임 3일 전: 50% 환불</li>
+          <li>모임 당일 및 1일 전: 환불 불가</li>
+        </ul>
+      </div>
+    </section>
+    
+    <div style="height: 100px;"></div>
+
+  </main>
+
+  <div class="bottom-cta-container">
+    <a href="https://docs.google.com/forms/..." target="_blank" class="cta-btn">
+      참여 신청하기 (남은 자리 2명)
+    </a>
+  </div>
+
+</div>
+
+<script>
+  // 1. 네이버 지도 설정
+  var mapOptions = {
+    center: new naver.maps.LatLng(37.781656, 127.024580),
+    zoom: 17,
+    minZoom: 10,
+    zoomControl: true,
+    zoomControlOptions: { position: naver.maps.Position.TOP_RIGHT },
+    scrollWheel: false,
+    draggable: false // 모바일 스크롤 방해 방지
+  };
+  var map = new naver.maps.Map('map', mapOptions);
+  var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.781656, 127.024580),
+    map: map
+  });
+
+  // 2. 커리큘럼 데이터 로직 (기존과 동일)
+  const curriculumData = [
+    { year: 2025, month: 11, title: "기획자의 습관", author: "최장순", img: "img/read/book_2511.jpg" },
+    { year: 2025, month: 12, title: "도둑맞은 집중력", author: "요한 하리", img: "img/read/book_2512.jpg" },
+    { year: 2026, month: 1, title: "설국", author: "가와바타 야스나리", img: "img/read/book_2601.jpg" },
+    { year: 2026, month: 2, title: "미니멀리스트 창업가", author: "사힐 라빙구", img: "img/read/book_2602.jpg", current: true },
+    { year: 2026, month: 3, title: "브랜드 마케터들의 이야기", author: "배달의민족", img: "img/read/book_2603.jpg" },
+    { year: 2026, month: 4, title: "내 운명은 고객이 결정한다", author: "박종윤", img: "img/read/book_default.jpg" }
+  ];
+
+  const track = document.getElementById('monthTrack');
+  let currentIndex = 0;
+
+  function initCurriculum() {
+    track.innerHTML = ""; 
+    curriculumData.forEach((item, index) => {
+      const btn = document.createElement('button');
+      btn.className = 'month-btn';
+      btn.innerHTML = `<span class="year">${item.year}</span><span class="mon">${item.month}월</span>`;
+      btn.onclick = () => selectMonth(index);
+      track.appendChild(btn);
+
+      if (item.current) currentIndex = index;
+    });
+    selectMonth(currentIndex);
+  }
+
+  function selectMonth(index) {
+    if (index < 0 || index >= curriculumData.length) return;
+    currentIndex = index;
+
+    const data = curriculumData[index];
+    document.getElementById('displayMonth').innerText = `${data.year}년 ${data.month}월 모임`;
+    document.getElementById('bookTitle').innerText = data.title;
+    document.getElementById('bookAuthor').innerText = data.author;
+    document.getElementById('bookCover').src = data.img;
+
+    const buttons = document.querySelectorAll('.month-btn');
+    buttons.forEach(b => b.classList.remove('active'));
+    buttons[index].classList.add('active');
+    buttons[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  function changeMonth(direction) {
+    selectMonth(currentIndex + direction);
+  }
+  
+  window.onload = initCurriculum;
+</script>
+
+</body>
+</html>
